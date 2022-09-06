@@ -13,7 +13,14 @@ app.get('/', (req,res) => res.send("Hello word"))
 //app.use(express.static('public')) //donde public es la carpeta que contiene los archivos web
 
 //uso base de datos -> crear ruta -> hacer ping
-app.get('ping')
+//asincronico async // const para obtener y guardar un dato
+//res.send -> envia una respuesta
+app.get('/ping', async(req, res) => {
+    const respuesta = await pool.query(`/*funcion()*/`)
+    res.send({
+        message: respuesta
+    })
+})
 
 //escuchar del puerto #
 app.listen(process.env.PORT || 3000) //
