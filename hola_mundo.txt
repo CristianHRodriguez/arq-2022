@@ -1,2 +1,7 @@
 npm init -y
 npm i express
+
+npm install pg
+npm i pg
+
+.env -> crear variables de entorno // NO SE USA porque se usan las variables de entorno de heroku
